@@ -22,6 +22,7 @@ This is a Selenium Hybrid Framework.
 ### Headerless Support
  - Chrome Headless
  - Firefox_Headless
+ - PhantomJS/Ghost Driver
 
 ### Platform Support
  - Windows
@@ -40,7 +41,7 @@ $ mvn clean test
 ```
 ---
 ### Browser Setup
- - Navigate to *WebAutomation\src\main\resources* change *BrowserType* in the ApplicationConfig.properties
+ - Navigate to **_WebAutomation\src\main\resources_** and change **_BrowserType_** in the __ApplicationConfig.properties__
  or use Maven to invoke different browsers
 
 ```sh
@@ -51,6 +52,7 @@ $ mvn clean test -DBrowserType=Firefox_Headless		#Mozilla Firefox Headless
 $ mvn clean test -DBrowserType=IE			#Internet Explorer
 $ mvn clean test -DBrowserType=Opera			#Opera Blink
 $ mvn clean test -DBrowserType=Edge			#Microsoft Edge
+$ mvn clean test -DBrowserType=Ghost			#Ghost Driver
 ```
 ---
 ### Report Details
@@ -59,7 +61,7 @@ $ mvn clean test -DBrowserType=Edge			#Microsoft Edge
 
 **Failed Screenshots** `System.getProperty("user.dir") + "/src/test/resources/Reports/Images";`
 
-**Video Location** `System.getProperty("user.dir") + "/src/test/resources/Reports/Videos";`
+**Video Location** `System.getProperty("user.dir") + "video";`
 
 ---
 
@@ -107,6 +109,3 @@ __To use a Single Workbook with multiple `@DataProvider` sheets, Use:__
 ```java
 @Test(dataProvider="multiSheetExcelRead", dataProviderClass=ExcelDataProvider.class)
 ```
-
-### Video Feature
-> Videos will be saved in the ${user.dir}/videos
